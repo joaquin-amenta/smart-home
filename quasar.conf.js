@@ -8,6 +8,9 @@
 
 module.exports = function (/* ctx */) {
   return {
+    bin: {
+      windowsAndroidStudio: 'E:\\ProgramasyJuegos\\Android\\Android Studio\\bin\\studio64.exe'
+    },
     // https://quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
 
@@ -76,7 +79,9 @@ module.exports = function (/* ctx */) {
     framework: {
       iconSet: 'material-icons', // Quasar icon set
       lang: 'en-us', // Quasar language pack
-      config: {},
+      config: {
+        notify: {}
+      },
 
       // Possible values for "importStrategy":
       // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
@@ -84,7 +89,11 @@ module.exports = function (/* ctx */) {
       importStrategy: 'auto',
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Notify',
+        'LocalStorage',
+        'SessionStorage'
+      ]
     },
 
     // animations: 'all', // --- includes all animations
