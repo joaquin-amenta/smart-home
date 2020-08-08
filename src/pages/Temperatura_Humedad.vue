@@ -2,7 +2,7 @@
     <q-page class="q-pa-md">
         <div class="column items-center">
             <div class="col">
-                <h3>Temperatura y Humedad</h3>
+                <h3 class="q-py-sm q-px-xl titulo">Temperatura y Humedad</h3>
             </div>
             <div class="col q-ma-md">
                 <q-icon name="img:thermometer.svg" size="200px"/>
@@ -25,3 +25,20 @@ export default {
     // }
 }
 </script>
+
+<style lang="scss" scoped>
+.myslider{
+    max-width: 500px;
+    margin:0 auto;
+    color:darkgoldenrod;
+}
+.bordeado{
+    border: 1px solid;
+    border-radius: 20px;
+
+}
+.titulo{
+    border: 1px solid;
+    border-radius: 40px;
+}
+</style>

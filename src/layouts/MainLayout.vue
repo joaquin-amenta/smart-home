@@ -48,22 +48,6 @@
             <q-item-label>Inicio</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable exact to="/configuracion">
-          <q-item-section avatar>
-            <q-icon name="settings" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Configuracion</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable exact to="/ayuda">
-          <q-item-section avatar>
-            <q-icon name="help" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Ayuda</q-item-label>
-          </q-item-section>
-        </q-item>
         <q-item clickable exact to="/luz">
           <q-item-section avatar>
             <q-icon name="brightness_5" />
@@ -88,6 +72,23 @@
             <q-item-label>Temperatura y Humedad</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item clickable exact to="/configuracion">
+          <q-item-section avatar>
+            <q-icon name="settings" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Configuracion</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable exact to="/ayuda">
+          <q-item-section avatar>
+            <q-icon name="help" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Ayuda</q-item-label>
+          </q-item-section>
+        </q-item>
+        
 
       </q-list>
     </q-drawer>
