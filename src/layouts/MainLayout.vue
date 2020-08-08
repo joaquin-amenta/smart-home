@@ -37,7 +37,7 @@
     >
       <q-list>
         <q-item-label header class="text-grey-8">
-          Essential Links
+          Smart-Home
         </q-item-label>
 
         <q-item clickable exact to="/">

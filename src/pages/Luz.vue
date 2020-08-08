@@ -35,7 +35,7 @@
 </template>
 
 <script>
-// import { mapActions, mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex';
 
 export default {
   data () {
@@ -44,34 +44,33 @@ export default {
     }
   },
   methods: {
-    // ...mapActions('store', ['switchLuz']),
+    ...mapActions('store', ['switchLuz']),
     cambiarEstado(){ 
-        //al tocar el btn-toggle cambia entre encendido y apagado
-        // this.switchLuz(this.estado)
-
-
+        /// al tocar el btn-toggle cambia entre encendido y apagado
+        this.switchLuz(this.estado)
     }
+  },
+  computed: {
+      ...mapState('store', ['luz']),
+      estadoLuz() {
+          return this.luz.estado
+      }
+  },
+  watch: {
+      estadoLuz(){
+          this.estado = this.luz.estado
+      }
+  },
+  mounted() {
+      this.estado = this.luz.estado
   }
-// ,
-//   computed: {
-//       ...mapState('store', ['luz']),
-//       estadoLuz() {
-//           return this.luz.estado
-//       }
-//   },
-//   watch: {
-//       estadoLuz(){
-//           this.estado = this.luz.estado
-//       }
-//   },
-//   mounted() {
-//       this.estado = this.luz.estado
-//   }
 }
 
 
 
 </script>
+
+
 
 <style lang="scss" scoped>
 .bordeado{

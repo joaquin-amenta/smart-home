@@ -51,7 +51,7 @@
 
 <script>
 import { LocalStorage, SessionStorage } from 'quasar'
-// import { mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
 
 export default {
@@ -66,9 +66,8 @@ export default {
         }
     },
     methods: {
-        //...mapActions('store', ['subscribirse']),
+        ...mapActions('store', ['subscribirse']),
         guardarCambios(){
-            // console.log('Metodo guardar cambios');
             if(!this.broker || !this.puerto || !this.protocolo){
                 this.$q.notify({
                     type: 'negative',

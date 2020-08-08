@@ -10,42 +10,40 @@
             <div class="col"><h6 class="q-mb-md q-px-lg q-py-xs bordeado">Intensidad</h6></div>
             <div class="col"><h5><strong>{{intensidad}}</strong></h5></div>
         </div>
-            <q-slider class="myslider" v-model="intensidad" :min="0" :max="100"/>
-             <!-- @change="cambiarIntensidad(intensidad)" -->
+            <q-slider class="myslider" v-model="intensidad" @change="cambiarIntensidad(intensidad)" :min="0" :max="100"/>
     </q-page>
 </template>
 
 <script>
-// import { mapActions, mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
     data(){
         return{
             intensidad: null
         }
+    },
+    methods: {
+        ...mapActions('store', ['cambiarIntensidadLuz_reg']),
+        cambiarIntensidad(intensidad){
+            let aux = intensidad.toString()
+            this.cambiarIntensidadLuz_reg(aux)
+        }
+    },
+    computed: {
+        ...mapState('store', ['luz_reg']),
+        intensidadLuz_reg() {
+            return this.luz_reg.intensidad
+        }
+    },
+    watch: {
+        intensidadLuz_reg(){
+            this.intensidad = parseInt(this.luz_reg.intensidad)
+        }
+    },
+    mounted() {
+        this.intensidad = parseInt(this.luz_reg.intensidad)
     }
-    // ,
-    // methods: {
-    //     ...mapActions('store', ['cambiarIntensidadLuz_reg']),
-    //     cambiarIntensidad(intensidad){
-    //         let aux = intensidad.toString()
-    //         this.cambiarIntensidadLuz_reg(aux)
-    //     }
-    // },
-    // computed: {
-    //     ...mapState('store', ['luz_reg']),
-    //     intensidadLuz_reg() {
-    //         return this.luz_reg.intensidad
-    //     }
-    // },
-    // watch: {
-    //     intensidadLuz_reg(){
-    //         this.intensidad = parseInt(this.luz_reg.intensidad)
-    //     }
-    // },
-    // mounted() {
-    //     this.intensidad = parseInt(this.luz_reg.intensidad)
-    // }
 }
 </script>
 
