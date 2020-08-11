@@ -4,7 +4,14 @@
   </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
+
 export default {
-  name: 'App'
+  methods: {
+    ...mapActions('store', ['escuchar'])
+  },
+  mounted() {
+    this.escuchar()
+  }
 }
 </script>
