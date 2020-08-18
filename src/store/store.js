@@ -51,7 +51,6 @@ const actions = {
     },
     escuchar({ commit }){
         /// Funcion para recibir el mensaje del broker
-        console.log('escuchar')
         let topicos = {
             'casa/luz/estado': function(message){
                 let detalleLuz = message.toString()

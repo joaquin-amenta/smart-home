@@ -8,7 +8,6 @@
                 <p>1. Asegurese de que esta conectado al broker y puerto adecuado, revise la pagina de configuracion</p>
                 <p>2. A menos que sea necesario, deje en blanco los espacios de 'Usuario' y 'Contraseña'</p>
                 <p>3. Recargue la pagina</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione placeat, quos, animi fugit sequi dolore sit pariatur cupiditate non unde qui explicabo ut distinctio asperiores, magni velit ipsa cum eius!</p>
             </div>
         </div>
     </q-page>

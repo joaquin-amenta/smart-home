@@ -1,8 +1,8 @@
 {
-  "name": "prueba",
+  "name": "smart-home",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "description": "A Home Automation app",
+  "productName": "Smart-Home",
   "author": "Joaquin Amenta <joaquin.amenta@gmail.com>",
   "private": true,
   "scripts": {
