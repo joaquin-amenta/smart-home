@@ -2,39 +2,46 @@
     <q-page class="q-pa-md">
         <div class="q-gutter-y-md column items-center">
             <div class="q-mt-md">
-                <h3 class="q-py-sm q-px-xl titulo">CONFIGURACION</h3>
+                <h4 class="q-py-sm q-px-lg titulo">CONFIGURACION</h4>
             </div>
             <div class="q-ma-md">
                 <q-icon name="img:settings.svg" size="200px"/>
             </div>
-            
+
             <div class="row">
-                <div class="col q-ma-md">
-                    <q-select outlined v-model="protocolo" :options="listaProtocolos" prefix="Protocolo: " 
+                <div class="col q-ma-md casilla">
+                    <q-select outlined v-model="protocolo" :options="listaProtocolos" label="Protocolo: " 
                     :rules="[val => !!val || 'Campo obligatorio']"/>
                 </div>
             </div>
             <div class="row">
-                <div class="col q-ma-md">
-                    <q-input outlined v-model="broker" placeholder="Direcion IP" stack-label prefix="Broker:" 
+                <div class="col q-ma-md casilla">
+                    <q-input outlined v-model="broker" placeholder="Direcion IP" label="Broker:" type="text"
                     :rules="[val => !!val || 'Campo obligatorio']" />
                 </div>
-                <div class="col q-ma-md">
-                    <q-input outlined v-model="puerto" placeholder="xxxx" stack-label prefix="Puerto:" type="text"
+                <div class="col q-ma-md casilla">
+                    <q-input outlined v-model="puerto" placeholder="xxxx" label="Puerto:" type="number"
                     :rules="[val => !!val || 'Campo obligatorio']"/>
                 </div>
             </div>
             <div class="row">
-                <div class="col q-ma-md">
-                    <q-input outlined v-model="usuario" placeholder="Nombre" stack-label prefix="Usuario:"/>
+                <div class="col q-ma-md casilla">
+                    <q-input outlined v-model="usuario" placeholder="Nombre" label="Usuario:" type="text"/>
                 </div>
-                <div class="col q-ma-md">
-                    <q-input outlined v-model="contraseña" placeholder="xxxxxx" stack-label prefix="Contraseña:" />
+                <div class="col q-ma-md casilla">
+                    <q-input outlined v-model="contraseña" placeholder="xxxxxx" label="Contraseña:" type="password"/>
                 </div>
             </div>
-            <div class="q-ma-md">
-                <q-btn @click="guardarCambios" label="Guardar" type="submit" color="primary" size="lg"/>
+
+            <div class="row justify-around">
+                <div class="col-xs-6 col-md-4 q-ma-md">
+                    <q-btn @click="guardarCambios" label="Guardar" type="submit" color="primary" size="20px"/>
+                </div>
+                <div class="col-xs-7 col-md-4 q-ma-md">
+                    <q-btn @click="restaurarValores" label="Restaurar" type="submit" color="red" size="20px"/>
+                </div>
             </div>
+
             <div class="info-actual">
                 Protocolo: {{this.$q.localStorage.getItem('protocolKey')}}
                 <br>
@@ -108,6 +115,42 @@ export default {
             if(LocalStorage.getItem('userKey') != 'null'){this.usuario = LocalStorage.getItem('userKey')}
             if(LocalStorage.getItem('passKey') != 'null'){this.contraseña = LocalStorage.getItem('passKey')}
             if(LocalStorage.has('protocolKey')){this.protocolo = LocalStorage.getItem('protocolKey')}
+        },
+        restaurarValores(){
+            this.$q.dialog({
+                    title: 'DESEA RESTAURAR LA CONFIGURACION POR DEFECTO',
+                    message: 'ESTA ACCION NO SE PUEDE DESHACER',
+                    cancel: true,
+                    persistent: true
+                }).onOk(() => {
+                    LocalStorage.remove('brokerKey')
+                    LocalStorage.remove('portKey')
+                    LocalStorage.remove('userKey')
+                    LocalStorage.remove('passKey')
+                    LocalStorage.remove('protocolKey')
+                    const dialog = this.$q.dialog({
+                    title: 'Se restauraron los valores'
+                    }).onOk(() => {
+                        // console.log('OK')
+                    }).onCancel(() => {
+                        // console.log('Cancel')
+                    }).onDismiss(() => {
+                        clearTimeout(timer)
+                        location.reload()
+                        // console.log('I am triggered on both OK and Cancel')
+                    })
+                    const timer = setTimeout(() => {
+                        dialog.hide()
+                    }, 2000)
+                }).onOk(() => {
+                    // console.log('>>>> second OK catcher')
+                }).onCancel(() => {
+                    // console.log('>>>> Cancel')
+                }).onDismiss(() => {
+                    // console.log('I am triggered on both OK and Cancel')
+                })
+
+            
         }
     },
     mounted() {
@@ -126,5 +169,10 @@ export default {
 }
 .info-actual{
     color: grey;
+}
+.casilla{
+    max-width: 255px;
+    min-width: 132px;
+    align-self: center;
 }
 </style>

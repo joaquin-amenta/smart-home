@@ -11,6 +11,9 @@ const state = {
     sensor: {
         temperatura: 0,
         humedad: 0
+    },
+    mensaje: {
+        recibido: true
     }
 }
 const mutations = {
@@ -23,6 +26,9 @@ const mutations = {
     },
     actualizarSensor(state,payload) {
         Vue.set(state.sensor, payload.claveSensor, payload.detalleSensor)
+    },
+    actualizarMensaje(state, payload){
+        Vue.set(state.mensaje, 'recibido', payload)
     }
 }
 const actions = {
@@ -88,6 +94,9 @@ const actions = {
 
         client.on('message', function(topic, message){
             topicos[topic](message)
+            commit('actualizarMensaje', {
+                payload: true
+            })
         })
     },
     switchLuz({dispatch}, payload){

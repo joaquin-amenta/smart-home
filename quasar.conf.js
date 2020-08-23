@@ -80,7 +80,8 @@ module.exports = function (/* ctx */) {
       iconSet: 'material-icons', // Quasar icon set
       lang: 'en-us', // Quasar language pack
       config: {
-        notify: {}
+        notify: {},
+        loading: {}
       },
 
       // Possible values for "importStrategy":
@@ -92,7 +93,9 @@ module.exports = function (/* ctx */) {
       plugins: [
         'Notify',
         'LocalStorage',
-        'SessionStorage'
+        'SessionStorage',
+        'Loading',
+        'Dialog'
       ]
     },
 
