@@ -2,7 +2,7 @@
     <q-page class="q-pa-md">
         <div class="column items-center">
             <div class="col">
-                <h3 class="q-py-sm q-px-xl titulo">LUZ</h3>
+                <h4 class="q-py-sm q-px-lg titulo">LUZ</h4>
             </div>
             <div class="col">
                 <q-icon name="img:ceiling-lamp.svg" size="200px"/>

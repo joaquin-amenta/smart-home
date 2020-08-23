@@ -1,8 +1,6 @@
 <template>
   <q-page class="q-pa-md q-gutter-xl">
-    <div class="row">
-      <div class="col gt-xs">
-      </div>
+    <div class="column items-center">
       
       <div class="column inline justify-center">
         <div class="row">
@@ -50,7 +48,7 @@
 
       </div>
 
-      <div class="col gt-xs"></div>
+
     </div>
   </q-page>
 </template>

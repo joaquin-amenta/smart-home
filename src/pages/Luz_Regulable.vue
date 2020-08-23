@@ -2,7 +2,7 @@
     <q-page class="q-pa-md">
         <div class="column items-center">
             <div class="col">
-                <h3 class="q-py-sm q-px-xl titulo">LUZ REGULABLE</h3>
+                <h4 class="q-py-sm q-px-lg titulo">LUZ REGULABLE</h4>
             </div>
             <div class="col q-ma-md">
                 <q-icon name="img:desk-lamp.svg" size="200px"/>
