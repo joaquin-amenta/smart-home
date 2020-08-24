@@ -82,4 +82,5 @@
     </platform>
     <allow-navigation href="about:*" />
     <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="loadUrlTimeoutValue" value="60000" />
 </widget>

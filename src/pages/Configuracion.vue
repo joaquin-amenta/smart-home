@@ -88,7 +88,6 @@ export default {
                     LocalStorage.set('userKey', this.usuario);
                     LocalStorage.set('passKey', this.contraseña);
                     LocalStorage.set('protocolKey', this.protocolo);
-                    // this.subscribirse();
                 } catch (e) {
                     console.log(e);
                 }
@@ -120,8 +119,7 @@ export default {
             this.$q.dialog({
                     title: 'DESEA RESTAURAR LA CONFIGURACION POR DEFECTO',
                     message: 'ESTA ACCION NO SE PUEDE DESHACER',
-                    cancel: true,
-                    persistent: true
+                    cancel: true
                 }).onOk(() => {
                     LocalStorage.remove('brokerKey')
                     LocalStorage.remove('portKey')
@@ -137,7 +135,6 @@ export default {
                     }).onDismiss(() => {
                         clearTimeout(timer)
                         location.reload()
-                        // console.log('I am triggered on both OK and Cancel')
                     })
                     const timer = setTimeout(() => {
                         dialog.hide()

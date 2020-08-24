@@ -51,8 +51,10 @@ export default {
                             type: 'negative',
                             position: 'center',
                             multiLine: true,
+                            progress: true,
+                            timeout: 6000,
                             actions: [{
-                                label: 'Configuracion', color: 'white', handler: () => { window.location.href = '/#/configuracion';}
+                                label: 'Configuracion', color: 'white', handler: () => {this.$router.push('/configuracion')}
                             }]
                         })
                     }
