@@ -84,6 +84,7 @@ El codigo y el funcionamiento se puede encontrar en el [proyecto en el cual esta
 ## Built With
 
 * [Quasar](https://quasar.dev/) - Framework para desarrollo multiplataforma
+* [Node.js](https://nodejs.org/) - Runtime environment de JavaScript
 * [Vue.js](https://vuejs.org/v2/guide/) - Framework de JavaScript progresivo
 * [mqtt.js](https://www.npmjs.com/package/mqtt) - Paquete de node para la conexion al broker mqtt
 
@@ -94,7 +95,7 @@ Se utiliza [GitHub](http://github.com/) para control de versiones.
 ## Autores
 
 * **Joaquin Amenta** - *Initial work* - [joaquin-amenta](https://github.com/joaquin-amenta)
-* **Ezequiel Salagoity** *First Approach and Hardware Programming* - [EzequielSalagoity](https://github.com/EzequielSalagoity)
+* **Ezequiel Salagoity** - *First Approach and Hardware Programming* - [EzequielSalagoity](https://github.com/EzequielSalagoity)
 
 
 
